@@ -42,15 +42,14 @@ def main():
     print(emails_str)
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login('pooja.giri@kritikalsolutions.com', 'qbwavfjbbkkeydct')
-    # sent = server.sendmail('pj','pooja.giri@kritikalsolutions.com', 'you are a cheater')
+    server.login('poojacs11@gmail.com', 'XXXXXXXXXXX')  # create application specific password if u have 2 step authentication enabled
     msg = MIMEMultipart()
 
-    msg['From'] = 'pooja.giri@kritikalsolutions.com'
+    msg['From'] = 'pxxxx@XXXXXX.com'
     msg['To'] = emails_str
-    # msg['Bcc'] = 'vishal.upadhyay@kritikalsolutions.com, bhawandtu93@gmail.com, looklikeriaz@gmail.com'
-    msg['Bcc'] = 'pooja.giri@kritikalsolutions.com'
-    msg['Subject'] = 'Quote of the day ' + datetime.datetime.now().strftime("%d-%m-%Y")
+    msg['Bcc'] = 'pxxxx@XXXXXX.com'
+    Today = datetime.date.today() + datetime.timedelta(days=1)
+    msg['Subject'] = 'Quote of the day ' + Today.strftime("%d-%m-%Y")
     # message = message_template.substitute(PERSON_NAME=name.title())
     message = message_template.substitute()
     print(message)
@@ -85,9 +84,9 @@ def main():
     # We reference the image in the IMG SRC attribute by the ID we give it below
     msgText = MIMEText(message + '<br><img src="cid:image1" width="500"><br>', 'html')
     msg.attach(msgText)
-
+    print('quote-of-the-day-'+ str(datetime.date.today()) +'.jpg')
     # This example assumes the image is in the current directory
-    fp = open('quote-of-the-day.jpg', 'rb')
+    fp = open('quote-of-the-day-'+ str(datetime.date.today()) +'.jpg', 'rb')
     msgImage = MIMEImage(fp.read())
     fp.close()
 
