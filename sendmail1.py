@@ -42,7 +42,7 @@ def main():
     print(emails_str)
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login('poojacs11@gmail.com', 'XXXXXXXXXXX')  # create application specific password if u have 2 step authentication enabled
+    server.login('XXXXXX1@gmail.com', 'XXXXXXXXXXX')  # create application specific password if u have 2 step authentication enabled
     msg = MIMEMultipart()
 
     msg['From'] = 'pxxxx@XXXXXX.com'
